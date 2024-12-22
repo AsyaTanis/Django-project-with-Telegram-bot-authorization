@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход через Telegram</title>
+</head>
+<body>
+    <h1>Вход через Telegram</h1>
+
+    {% if user.is_authenticated %}
+        <p>Добро пожаловать, {{ user.username }}!</p>
+    {% else %}
+        <a href="{{ telegram_login_url }}">
+            <button>Войти через Telegram</button>
+        </a>
+    {% endif %}
+</body>
+</html>
